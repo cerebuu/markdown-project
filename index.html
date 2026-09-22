@@ -9,21 +9,38 @@
 </head>
 
 <body>
-    <h1>Markdown to HTML Converter</h1>
-    <div id="container">
-        <div class="container">
-            <h2>Markdown Input:</h2>
-            <textarea id="markdown-input" placeholder="Enter your markdown here..."></textarea>
+    <header class="topbar">
+        <div class="topbar-inner">
+            <span class="logo-mark">MD</span>
+            <h1>Markdown to HTML Converter</h1>
         </div>
-        <div class="container">
-            <h2>Raw HTML Output:</h2>
-            <div id="html-output"></div>
+    </header>
+
+    <main class="page">
+        <div id="container">
+            <div class="container">
+                <div class="panel-header">
+                    <h2>Markdown Input</h2>
+                </div>
+                <textarea id="markdown-input" placeholder="Enter your markdown here..."></textarea>
+            </div>
+
+            <div class="container">
+                <div class="panel-header">
+                    <h2>Raw HTML Output</h2>
+                </div>
+                <div id="html-output"></div>
+            </div>
+
+            <div class="container">
+                <div class="panel-header">
+                    <h2>HTML Preview</h2>
+                </div>
+                <div id="preview"></div>
+            </div>
         </div>
-        <div class="container">
-            <h2>HTML Preview:</h2>
-            <div id="preview"></div>
-        </div>
-    </div>
+    </main>
+
     <script src="script.js"></script>
 </body>
 
