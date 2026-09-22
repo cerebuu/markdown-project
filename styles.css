@@ -1,9 +1,11 @@
 :root {
-    --border-color: #d0d7de;
-    --bg-canvas: #ffffff;
-    --bg-subtle: #f6f8fa;
-    --text-primary: #1f2328;
-    --text-secondary: #57606a;
+    --color-black: #0d1117;
+    --color-white: #ffffff;
+    --gray-100: #f6f8fa;
+    --gray-200: #eaeef2;
+    --gray-300: #d0d7de;
+    --gray-500: #6e7781;
+    --gray-700: #24292f;
     --radius: 6px;
 }
 
@@ -14,14 +16,15 @@
 body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-    background-color: var(--bg-canvas);
-    color: var(--text-primary);
+    background-color: var(--color-white);
+    color: var(--color-black);
     line-height: 1.5;
 }
 
+/* Top bar */
 .topbar {
-    border-bottom: 1px solid var(--border-color);
-    background-color: var(--bg-canvas);
+    border-bottom: 1px solid var(--gray-300);
+    background-color: var(--color-white);
 }
 
 .topbar-inner {
@@ -39,7 +42,8 @@ body {
     justify-content: center;
     width: 32px;
     height: 32px;
-    border: 1px solid var(--border-color);
+    background-color: var(--color-black);
+    color: var(--color-white);
     border-radius: var(--radius);
     font-weight: 600;
     font-size: 13px;
@@ -49,14 +53,17 @@ body {
     font-size: 16px;
     font-weight: 600;
     margin: 0;
+    color: var(--color-black);
 }
 
+/* Page */
 .page {
     max-width: 1200px;
     margin: 0 auto;
     padding: 32px 24px 64px;
 }
 
+/* Container grid */
 #container {
     display: flex;
     flex-direction: column;
@@ -64,27 +71,28 @@ body {
 }
 
 .container {
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--gray-300);
     border-radius: var(--radius);
     overflow: hidden;
-    background-color: var(--bg-canvas);
+    background-color: var(--color-white);
 }
 
 .panel-header {
     padding: 10px 16px;
-    border-bottom: 1px solid var(--border-color);
-    background-color: var(--bg-subtle);
+    border-bottom: 1px solid var(--gray-300);
+    background-color: var(--gray-100);
 }
 
 .panel-header h2 {
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 600;
     margin: 0;
-    color: var(--text-secondary);
+    color: var(--gray-500);
     text-transform: uppercase;
-    letter-spacing: 0.03em;
+    letter-spacing: 0.04em;
 }
 
+/* Shared field styling */
 #markdown-input,
 #html-output,
 #preview {
@@ -95,8 +103,8 @@ body {
     margin: 0;
     border: none;
     font-size: 14px;
-    background-color: var(--bg-canvas);
-    color: var(--text-primary);
+    background-color: var(--color-white);
+    color: var(--color-black);
     overflow-y: auto;
 }
 
@@ -105,45 +113,67 @@ body {
     resize: vertical;
 }
 
+#markdown-input::placeholder {
+    color: var(--gray-500);
+}
+
 #markdown-input:focus {
-    outline: 2px solid var(--text-primary);
+    outline: 2px solid var(--color-black);
     outline-offset: -2px;
 }
 
 #html-output {
     font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, monospace;
     white-space: pre-wrap;
-    background-color: var(--bg-subtle);
-    color: var(--text-secondary);
+    background-color: var(--gray-100);
+    color: var(--gray-700);
 }
 
 #preview {
     white-space: normal;
+    color: var(--color-black);
 }
 
 #preview h1, #preview h2, #preview h3 {
     margin-top: 0;
     font-weight: 600;
+    color: var(--color-black);
+}
+
+#preview strong {
+    color: var(--color-black);
+    font-weight: 700;
+}
+
+#preview em {
+    color: var(--gray-700);
 }
 
 #preview blockquote {
     margin: 0.5em 0;
     padding-left: 1em;
-    border-left: 3px solid var(--border-color);
-    color: var(--text-secondary);
+    border-left: 3px solid var(--gray-300);
+    color: var(--gray-500);
 }
 
 #preview a {
-    color: var(--text-primary);
+    color: var(--color-black);
     text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+#preview a:hover {
+    color: var(--gray-700);
 }
 
 #preview img {
     max-width: 100%;
     border-radius: var(--radius);
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--gray-300);
+    filter: grayscale(100%);
 }
 
+/* Responsive: side-by-side on larger screens */
 @media (min-width: 900px) {
     #container {
         flex-direction: row;
